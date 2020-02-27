@@ -27,7 +27,7 @@ Device combines the particulate matter sensors and the corresponding weather sen
 
 _Example data record_
 
-'''
+```
 {
   "actionType" : "append",
   "entities" : [ {
@@ -52,7 +52,7 @@ _Example data record_
     }
 }
 
-'''
+```
 
 * WeatherObserved
 
@@ -62,8 +62,7 @@ Each spring sensor is combined to a measuring station via a device reference wit
 
 _Example data record_
 
-
-'''
+```
 {
   "actionType" : "append",
   "entities" : [ {
@@ -94,7 +93,8 @@ _Example data record_
       "value" : 969.3380999999999
     }
   }
-'''
+
+```
 
 ### Sensor Types
 
