@@ -6,16 +6,91 @@ Apache Nifi Scripte for 2019
 
 Fine dust data from the Sensor.community platform in NGSI V2 format
 
-## KPIs
+### Context Broker and API endpoint
 
-Metrics as KPI format from the 2019 platform NGSI V2 format
+The used Context Broker is located in the FIWARE platform https://2019.smartmaas.services and is accessed via API at https://context.2019.smartmaas.services.
 
-## Parking
+The fiware service used is smartmaas001 and the fiware service path /
 
-Parking sensor data of Stadtwerke Kiel for 17 parking spaces at the "Kiellinie" in NGST V2 format.
-Data use of these sensors has only been released for requested test and training scenarios.
-Before further use of this query, please contact the "Stadtwerke Kiel".
+A Bearer Token must be registered at https://apis.2019.smartmaas.services.
 
-## Flixbus
+The transfer of the data is carried out via the following endpoint https://context.2019.smartmaas.services/v2/op/update/
 
-Flixbus data of the German stations and the German Flixbus regions
+
+### Entenitiy Types
+
+3 Entitiy Tpyes are generated:
+
+* Device
+
+Device combines the particulate matter sensors and the corresponding weather sensor to a measuring station which forms a location using the location data.
+
+_Example data record_
+
+{
+  "actionType" : "append",
+  "entities" : [ {
+    "type" : "Device",
+    "category" : {
+      "value" : "sensor"
+    },
+    "dateObserved" : {
+      "type" : "DateTime",
+      "value" : "2020-02-27T10:36:59"
+    },
+    "location" : {
+      "type" : "geo:json",
+      "value" : {
+        "type" : "Point",
+        "coordinates" : [ 8.684, 51.686 ]
+      }
+    },
+    "id" : "Device_16399",
+    "name" : {
+      "value" : "Device_16399"
+    }
+}
+
+
+* WeatherObserved
+
+Depending on the design, the spring sensor provides at least the temperature and the relative humidity, the different sensor types are described below.
+
+Each spring sensor is combined to a measuring station via a device reference with an associated fine dust sensor.
+
+_Example data record_
+
+{
+  "actionType" : "append",
+  "entities" : [ {
+    "refDevice" : {
+      "type" : "Relationship",
+      "value" : "Device_15077"
+    },
+    "type" : "WeatherObserved",
+    "dateObserved" : {
+      "type" : "DateTime",
+      "value" : "2020-02-27T10:39:56"
+    },
+    "location" : {
+      "type" : "geo:json",
+      "value" : {
+        "type" : "Point",
+        "coordinates" : [ 9.908, 49.704 ]
+      }
+    },
+    "id" : "BMP280_27826",
+    "stationName" : {
+      "value" : "BMP280_27826"
+    },
+    "temperature" : {
+      "value" : 8.87
+    },
+    "atmosphericPressure" : {
+      "value" : 969.3380999999999
+    }
+  }
+
+### Sensor Types
+
+### Credits
