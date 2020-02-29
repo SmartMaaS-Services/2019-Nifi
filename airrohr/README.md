@@ -29,10 +29,6 @@ The transfer of the data is carried out via the following endpoint https://conte
 
 Device combines the particulate matter sensors and the corresponding weather sensor to a measuring station which forms a location using the location data.
 
-_Datamodell_
-
-[WeatherObserved]
-
 _Example data record_
 
 ```
@@ -70,7 +66,7 @@ Each spring sensor is combined to a measuring station via a device reference wit
 
 _Datamodell_
 
-[AirQualityObserved]
+[WeatherObserved]
 
 _Example data record_
 
@@ -113,6 +109,10 @@ _Example data record_
 Depending on the type, the particulate matter sensor provides at least the PM 2.5 and PM 10 data. Some types can provide further measured values, but are not considered here at this time. The different sensor types are described below. 
 
 Each particulate matter sensor is linked via a device reference with a corresponding weather sensor.
+
+_Datamodell_
+
+[AirQualityObserved]
 
 _Example data record_
 
