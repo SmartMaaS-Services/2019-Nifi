@@ -29,6 +29,10 @@ The transfer of the data is carried out via the following endpoint https://conte
 
 Device combines the particulate matter sensors and the corresponding weather sensor to a measuring station which forms a location using the location data.
 
+_Datamodell_
+
+[WeatherObserved]
+
 _Example data record_
 
 ```
@@ -63,6 +67,10 @@ _Example data record_
 Depending on the design, the spring sensor provides at least the temperature and the relative humidity, the different sensor types are described below.
 
 Each spring sensor is combined to a measuring station via a device reference with an associated fine dust sensor.
+
+_Datamodell_
+
+[AirQualityObserved]
 
 _Example data record_
 
@@ -294,4 +302,7 @@ and
 Open Knowledge Foundation Deutschland e.V.
 https://okfn.de/
 
-and all the 10 thousands people who operate an "AirRohr Sensor"
+and all the 10 thousands people who operate an "AirRohr Sensors
+
+[WeatherObserved]: https://fiware-datamodels.readthedocs.io/en/latest/Weather/WeatherObserved/doc/spec/index.html
+[AirQualityObserved]: https://fiware-datamodels.readthedocs.io/en/latest/Environment/AirQualityObserved/doc/spec/index.html
